@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const page = (props: any) => {
-  return (
-    <div>Playlist{props?.searchParams?.id}</div>
-  )
-}
+  return <div>Playlist{props?.searchParams?.list}</div>;
+};
 
-export default page
+export default page;

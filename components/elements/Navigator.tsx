@@ -69,7 +69,7 @@ const Navigator = () => {
       <section>
         <ul className="flex flex-col">
           {dummyPlaylistArray.map((playlist) => {
-            return <PlayListNav playlist={playlist} />;
+            return <PlayListNav key={playlist.id} playlist={playlist} />;
           })}
         </ul>
       </section>

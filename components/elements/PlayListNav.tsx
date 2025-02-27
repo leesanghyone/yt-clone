@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import { IoMdPlayCircle } from "react-icons/io";
+
 const PlayListNav = ({ playlist }: { playlist: any }) => {
   const { id, owner, playlistName, songList } = playlist;
-
   const onClickPlay = () => {
     // to do play music
   };
-
   return (
     <li
       className="mx-3 px-4 h-[56px] flex justify-between items-center 
