@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  height: 100vh;  
+  height: 100vh;
 }
 
 :root {
@@ -26,8 +25,6 @@ body {
     text-wrap: balance;
   }
 }
-
-
 
 @layer base {
   :root {
@@ -58,7 +55,7 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -84,8 +81,6 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-
-
 
 @layer base {
   * {
