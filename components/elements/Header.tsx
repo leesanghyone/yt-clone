@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import UserIcon from "@/components/UserIcon";
+import PagePadding from "@/components/PagePadding";
+import { FaChromecast } from "react-icons/fa6";
+
 const Header = ({ children }: { children: React.ReactNode }) => {
   return (
-    <header className="relative">
+    <header className="relative overflow-y-auto w-full h-full">
       <section className="absolute w-full">
         {/* bgSection */}
         <div className="relative top-0 h-[400px] w-full">
@@ -14,7 +18,17 @@ const Header = ({ children }: { children: React.ReactNode }) => {
           />
         </div>
       </section>
-      <section className="absolute">{children}</section>
+      {/* search section */}
+      <section className="sticky">
+        <PagePadding>
+          searchSection
+          <article>
+            <FaChromecast size={26} />
+            <UserIcon />
+          </article>
+        </PagePadding>
+      </section>
+      <section className="relative">{children}</section>
     </header>
   );
 };
