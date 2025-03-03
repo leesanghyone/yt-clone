@@ -7,14 +7,16 @@ import { MdMoreVert } from "react-icons/md";
 import { FiPlay } from "react-icons/fi";
 import IconButton from "./elements/IconButton";
 
-const PlayListCard = ({ playlist }: { playlist: any }) => {
+const PlayListCard = ({ playlist = {} }: { playlist: any }) => {
   const { push } = useRouter();
-  const { id, owner, playlistName, songList } = playlist;
+  const { id, owner = "", playlistName = "", songList = [] } = playlist ?? {};
   const songListLen = songList?.length;
-  const imageSrc = getRandomElementFromArray(songList).imageSrc;
+  const imageSrc = getRandomElementFromArray(songList)?.imageSrc;
 
   const onClickCard = () => {
-    push(`/playlist?list=${id}`);
+    if (id) {
+      push(`/playlist?list=${id}`);
+    }
   };
   // 재생을 위한 함수.
   const onClickPlay = () => {
@@ -25,7 +27,10 @@ const PlayListCard = ({ playlist }: { playlist: any }) => {
     <article className="h-[240px] cursor-pointer group">
       <section onClick={onClickCard} className="relative h-[136px]">
         <Image
-          src={imageSrc}
+          src={
+            imageSrc ||
+            "https://images.unsplash.com/photo-1707833558984-3293e794031c"
+          }
           fill={true}
           alt="thumbnail"
           className="object-cover"
